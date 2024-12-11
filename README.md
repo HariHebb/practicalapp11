@@ -28,12 +28,15 @@ In this application, you will explore a dataset from kaggle. The original datase
        17  state         426880 non-null  object **
        
   ## Outliers Handling
-      Use IQR for determining the outliers. Judiciously modify the data frame to get rid of the outliers in the data.
-      Please find attached the histograms depicting how the distribution is better after removing the outliers
-      ![image](https://github.com/user-attachments/assets/10c413de-03ad-44fc-858a-198c00b046bf)
+      Use IQR for determining the outliers. Judiciously modify the data frame to get rid of the outliers in the data.Please find attached the histograms depicting how the distribution is better after removing the outliers
+      
+![Histogramwithoutlier](https://github.com/user-attachments/assets/5d645782-94a4-48bc-982c-91fa126f3125)
+
+![HistogramWithoutOutliers](https://github.com/user-attachments/assets/94611d68-34a3-454b-b98c-bb3281639809)
 
   ## Null Values Analysis
-    When Verifying percentage of Null Value spread across columns in the dataset . Here are some Key Observations
+    When Verifying percentage of Null Value spread across columns in the dataset . 
+    Here are some Key Observations
     - Region, Price, State and ID are compulsively populated
     - Year, Model,fuel,odometer. title status, transmission are available for the vast majority of records
     - Type,Paint Color and drive are populated for ~60-65% of records
@@ -58,8 +61,20 @@ In this application, you will explore a dataset from kaggle. The original datase
       paint_color     30.501078
       state            0.000000**
       
-      We decided to discard the columns with greater than 40 pct of the values NULL from our Training and Test data set
-      leveraged for training the model
+      We decided to discard the columns with greater than 40 pct of the values NULL from 
+      our Training and Test data set leveraged for training the model. So the columns 
+      condition, cylinders,size will not be considered to be a part of the training and test
+      
+  ## Discard Categorical Columns
+  
+     We leverage the value_counts() function to identify the number of distinct values for each categorical column. Any categorical column with more than 20 unqiue values was discarded from the training set with the exception of manufacturer( based on the knowledge that the brand of the car could have a say in the price of the car)
+
+  ## Handling Duplicate/Multiplicate VINS
+  
+      It was observed that the Vehichle Identification Number, a unque number to identify a vehichle was repated across multiple records. For the majority of the records the price across records was the same and so was majority of other columns except region. This redundant data would be of no imminent use to the model and as a part of the data cleanup care was taken to ensure that only one of the VIN record was retained and the rest were deleted from the data set 
+
+  ## Generate Boxplot and Countplots for all columns
    
+
     
     
