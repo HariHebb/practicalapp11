@@ -67,14 +67,23 @@ In this application, you will explore a dataset from kaggle. The original datase
       
   ## Discard Categorical Columns
   
-     We leverage the value_counts() function to identify the number of distinct values for each categorical column. Any categorical column with more than 20 unqiue values was discarded from the training set with the exception of manufacturer( based on the knowledge that the brand of the car could have a say in the price of the car)
-
+     We leverage the value_counts() function to identify the number of distinct values for each   
+    categorical column. Any categorical column with more than 20 unqiue values was discarded 
+    from the   training set with the exception of manufacturer( based on the knowledge that the 
+    brand of the car could   have a say in the price of the car)    
+   
   ## Handling Duplicate/Multiplicate VINS
   
-      It was observed that the Vehichle Identification Number, a unque number to identify a vehichle was repated across multiple records. For the majority of the records the price across records was the same and so was majority of other columns except region. This redundant data would be of no imminent use to the model and as a part of the data cleanup care was taken to ensure that only one of the VIN record was retained and the rest were deleted from the data set 
+      It was observed that the Vehichle Identification Number, a unque number to identify a vehichle 
+      was repated across multiple records. For the majority of the records the price across records 
+      was the same and so was majority of other columns except region. This redundant data would be 
+      of no imminent use to the model and as a part of the data cleanup care was taken to ensure 
+      that only one of the VIN record was retained and the rest were deleted from the data set 
 
   ## Generate Boxplot and Countplots for all columns
-   
+
+
+    ![Box_and_count_splot_categorical](https://github.com/user-attachments/assets/5d1c245c-a6a1-4ff4-833b-2c016e26a3b6)
 
     
     
